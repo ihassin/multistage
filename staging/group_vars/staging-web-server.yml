@@ -1,0 +1,6 @@
+---
+env_name: staging web server
+user: staging-web-deploy
+password: staging-web-deploy
+rails_env: test
+database_yml: staging-database.yml

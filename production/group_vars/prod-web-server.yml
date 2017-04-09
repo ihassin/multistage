@@ -1,0 +1,6 @@
+---
+env_name: production web server
+user: prod-web-deploy
+password: prod-web-deploy
+rails_env: production
+database_yml: prod-database.yml

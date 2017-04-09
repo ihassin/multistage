@@ -1,0 +1,9 @@
+[staging-web-server]
+staging-web.com
+
+[staging-db-server]
+staging-db.com
+
+[staging:children]
+staging-web-server
+staging-db-server

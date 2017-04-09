@@ -1,0 +1,9 @@
+[prod-web-server]
+prod-web.com
+
+[prod-db-server]
+prod-db.com
+
+[prod:children]
+prod-web-server
+prod-db-server

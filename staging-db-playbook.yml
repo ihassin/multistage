@@ -1,0 +1,8 @@
+---
+- hosts: staging-db-server
+
+  tasks:
+     - debug: msg="db reading from {{env_name}}"
+
+  roles:
+    - common
