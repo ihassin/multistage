@@ -1,2 +1,13 @@
 ---
-  - name: prod-db-stuff
+default: &default
+  adapter: mysql2
+  host: localhost
+  encoding: utf8
+  pool: 5
+  username: <%= ENV['NARUI_DB_USERNAME'] %>
+  password: <%= ENV['NARUI_DB_PASSWORD'] %>
+
+production:
+  <<: *default
+  host: nar-db-internal
+  database: news_production

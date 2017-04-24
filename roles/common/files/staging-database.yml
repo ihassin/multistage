@@ -1,2 +1,20 @@
 ---
-  - name: staging-db-stuff
+default: &default
+  adapter: mysql2
+  host: localhost
+  encoding: utf8
+  pool: 5
+  username: <%= ENV['NARUI_DB_USERNAME'] %>
+  password: <%= ENV['NARUI_DB_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: news_development
+
+test: &test
+  <<: *default
+  host: db-stage
+  database: news_test
+
+cucumber:
+  <<: *test

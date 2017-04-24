@@ -12,10 +12,7 @@
     copy: src=vimrc dest=/home/{{user}}/.vimrc owner={{user}}
 
   - name: Add RAILS env variable
-    lineinfile: dest=/home/{{user}}/{{item}} line='export RAILS_ENV={{rails_env}}' insertafter='EOF' state=present
-    with_items:
-      - .bashrc
-      - .profile
+    lineinfile: dest=/etc/environment line='export RAILS_ENV={{rails_env}}' insertafter='EOF' state=present
 
   - name: Set database.yml
     copy: src={{database_yml}} dest=/home/{{user}}/database.yml owner={{user}}

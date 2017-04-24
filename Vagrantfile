@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     web.vm.provision 'ansible' do |ansible|
       ansible.playbook = 'staging-web-playbook.yml'
-      ansible.inventory_path = 'staging/inventory'
+      ansible.inventory_path = 'environments/staging/inventory'
       ansible.host_key_checking = false
       ansible.sudo = true
     end
@@ -39,7 +39,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     db.vm.provision 'ansible' do |ansible|
       ansible.playbook = 'staging-db-playbook.yml'
-      ansible.inventory_path = 'staging/inventory'
+      ansible.inventory_path = 'environments/staging/inventory'
       ansible.host_key_checking = false
       ansible.sudo = true
     end
@@ -55,7 +55,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     web.vm.provision 'ansible' do |ansible|
       ansible.playbook = 'prod-web-playbook.yml'
-      ansible.inventory_path = 'production/inventory'
+      ansible.inventory_path = 'environments/production/inventory'
       ansible.host_key_checking = false
       ansible.sudo = true
     end
@@ -71,7 +71,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     db.vm.provision 'ansible' do |ansible|
       ansible.playbook = 'prod-db-playbook.yml'
-      ansible.inventory_path = 'production/inventory'
+      ansible.inventory_path = 'environments/production/inventory'
       ansible.host_key_checking = false
       ansible.sudo = true
     end
